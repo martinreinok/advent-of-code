@@ -1,2 +1,5 @@
-# advent_of_code_2021
-My solutions to AoC2021
+# Advent of Code 2021
+https://adventofcode.com/
+
+All puzzle descriptions can be found on adventofcode.com (2021)
+My puzzle inputs are in folder puzzle_input
