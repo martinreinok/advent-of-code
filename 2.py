@@ -1,6 +1,6 @@
 """
 2021
-Day 1 of Advent of Code
+Day 2 of Advent of Code
 https://adventofcode.com/
 """
 
