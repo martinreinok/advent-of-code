@@ -4,13 +4,7 @@ Day 2 of Advent of Code
 https://adventofcode.com/
 """
 
-
-def read_lines_from_file(filename):
-    with open(f"puzzle_input/{filename}") as data:
-        filedata = []
-        for line in data:
-            filedata.append(line.strip())
-    return filedata
+data2 = [x.strip() for x in open(f"puzzle_input/2")]
 
 
 def part_one(data):
@@ -58,8 +52,6 @@ def part_two(data):
 
     return [forward, down, up, aim]
 
-
-data2 = read_lines_from_file("2")
 
 forward, down, up = part_one(data2)
 print("Answer part one:", (down - up) * forward)
