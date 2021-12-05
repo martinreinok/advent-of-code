@@ -4,13 +4,7 @@ Day 1 of Advent of Code
 https://adventofcode.com/
 """
 
-
-def read_lines_from_file(filename):
-    with open(f"puzzle_input/{filename}") as data:
-        filedata = []
-        for line in data:
-            filedata.append(line.strip())
-    return filedata
+data = [int(x) for x in open(f"puzzle_input/1")]
 
 
 def part_one(data_list):
@@ -38,12 +32,6 @@ def part_two(data_list):
     return answer
 
 
-data = read_lines_from_file("1")
-
-# list to int
-data = [int(i) for i in data]
-
-part_one_answer = part_one(data)
-part_two_answer = part_two(data)
+part_one_answer, part_two_answer = part_one(data), part_two(data)
 
 print(f"Part one answer: {part_one_answer}\nPart two answer: {part_two_answer}")
