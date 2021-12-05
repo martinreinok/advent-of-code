@@ -4,15 +4,10 @@ Day 3 of Advent of Code
 https://adventofcode.com/
 """
 
-
 # Probably overthinked this a bit
 
-def read_lines_from_file(filename):
-    with open(f"puzzle_input/{filename}") as data:
-        filedata = []
-        for line in data:
-            filedata.append(line.strip())
-    return filedata
+data3 = [x.strip() for x in open(f"puzzle_input/3")]
+data3_part2 = [x.strip() for x in open(f"puzzle_input/3")]
 
 
 def part_one(data):
@@ -84,7 +79,6 @@ def part_two(data, common):
             return data
 
 
-data3 = read_lines_from_file("3")
 elements_count = part_one(data3)
 print(elements_count)
 answer_gamma = ""
@@ -101,10 +95,8 @@ print("epsilon part one: ", answer_epsilon)
 power = int(answer_gamma, 2) * int(answer_epsilon, 2)
 print("Power part one:", power)
 # Part 2
-
 oxygen = part_two(data3, True)
-data3 = read_lines_from_file("3")
-co2 = part_two(data3, False)
+co2 = part_two(data3_part2, False)
 print(oxygen, co2)
 life_support = int(oxygen[0], 2) * int(co2[0], 2)
 print(life_support)
