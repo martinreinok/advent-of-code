@@ -1,18 +1,27 @@
-from collections import deque
+from collections import Counter
 
+DAYS = 256
 data6 = [x.split(",") for x in open(f"puzzle_input/6")]
 data6 = [int(x) for x in data6[0]]
-print(data6)
-i = 0
-count = 0
-while count < 80:
-    for i in range(0, len(data6)):
-        if data6[i] == 0:
-            data6[i] += 6
-            data6.append(8)
-        else:
-            data6[i] -= 1
-        i += 1
-    count += 1
-print("Data 6 lenght", len(data6))
 
+counter = Counter(data6)
+# Sum of fish instead of each instance of fish
+fmap = [counter.get(0), counter.get(1), counter.get(2), counter.get(3),
+        counter.get(4), counter.get(5), counter.get(6), counter.get(7), counter.get(8)]
+
+fmap = [0 if x is None else x for x in fmap]
+buffer = []
+print(fmap)
+
+i = 0
+while i < DAYS:
+    buffer = fmap.copy()
+    fmap = [0 for each in fmap]
+
+    fmap[8] = buffer[0]
+    for ii in range(8):
+        fmap[7-ii] = buffer[7-ii+1]
+    fmap[6] += buffer[0]
+    # print(fmap)
+    i += 1
+print(f"Answer: After {DAYS} days there are: {sum(fmap)} lanternfish")
