@@ -17,8 +17,9 @@ i = 0
 while i < DAYS:
     buffer = fmap.copy()
     fmap = [0 for each in fmap]
-
+    # pos 0 goes to pos 8
     fmap[8] = buffer[0]
+    # rotate the list
     for ii in range(8):
         fmap[7-ii] = buffer[7-ii+1]
     fmap[6] += buffer[0]
